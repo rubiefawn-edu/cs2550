@@ -2,9 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Pirata+One&display=swap');
 
 :root {
-  --col-paper: oklch(94% 0.015 66);
+  --col-paper: oklch(94% 0.02 80);
+  --col-paper1: oklch(90% 0.03 80);
+  --col-paper2: oklch(86% 0.05 80);
+  --col-paper3: oklch(82% 0.07 80);
+
   --col-ink: oklch(22% 0.02 255);
   --col-ink-faint: oklch(40% 0.01 44);
+  --col-ink-red: oklch(56% 0.2 12);
+  --col-ink-blue: oklch(56% 0.15 250);
+  --col-ink-purple: oklch(56% 0.15 295);
 
   background-color: var(--col-paper);
   color: var(--col-ink);
@@ -15,7 +22,7 @@
 body {
   height: 100dvh;
   display: grid;
-  grid-template: "nav body" 1fr "nav footer" auto / minmax(min-content, 1fr) 5fr;
+  grid-template: "nav body" 1fr "footer ." auto / minmax(min-content, 1fr) 5fr;
   align-items: start;
 }
 
@@ -24,18 +31,30 @@ thead {
 }
 
 aside {
-  font-style: italic;
-  color: var(--col-ink-faint);
+  color: var(--col-ink-blue);
+  background-color: var(--col-paper1);
+  border-radius: var(--xs-rem);
+  padding: var(--xs-rem) var(--sm-rem);
+}
+
+aside::before {
+  content: "\f05a";
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-weight: 900;
+  margin-inline-end: 0.7ch;
 }
 
 a {
   font-weight: 600;
-  text-decoration: none;
-  color: var(--blue0);
+  /* text-decoration: none; */
+  color: var(--col-ink-blue);
 }
 
 a:visited {
-  color: var(--violet0);
+  color: var(--col-ink-purple);
 }
 
 table td {
@@ -44,15 +63,11 @@ table td {
 
 .todo {
   font-style: normal;
-  background-color: var(--col-ink-faint);
-  color: var(--col-paper);
-  border-radius: var(--zs-rem);
-  padding: var(--zs-rem);
+  color: var(--col-ink-red);
 }
 
 .todo::before {
-  content: 'TODO: ';
-  font-weight: bold;
+  content: "\f071";
 }
 
 .content {
