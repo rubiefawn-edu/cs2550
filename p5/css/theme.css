@@ -1,0 +1,105 @@
+/*
+   Dark theme!
+   Aside: this is not how I would normally handle a dark theme.
+   color-scheme and light-dark() are much better and automatically
+   respects the user's system preferences.
+
+   Project 5 update: I corrected the issue where the navbar toggle button
+   would obscure the theme toggle if the screen was narrow enough.
+*/
+
+:root {
+  color: var(--col-paper);
+  background-color: var(--col-ink-black);
+}
+
+form :where(label, legend) {
+  font-weight: bold;
+  font-style: italic;
+}
+
+aside {
+  background-color: color-mix(in oklch, var(--col-ink-black), white 10%);
+}
+
+thead {
+  background-color: var(--col-paper);
+  color: var(--col-ink-black);
+  font-weight: bold;
+}
+
+tbody tr:nth-child(2n+1) {
+  background-color: color-mix(in oklch, var(--col-ink-black), white 10%);
+}
+
+/* Put the navbar on top instead of to the left */
+body {
+  grid-template: "nav" auto "body" 1fr "footer" auto;
+  height: 100%;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: var(--md-rem);
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--col-paper);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: var(--md-rem);
+  margin: 0;
+}
+
+nav * {
+  margin: 0;
+  text-decoration: none;
+}
+
+/* Keep figures in light theme, since the images are dark colors on transparent background */
+figure {
+  background-color: var(--col-paper);
+  color: var(--col-ink-black);
+  border-radius: var(--sm-rem);
+  padding: var(--sm-rem);
+  margin-block: var(--sm-rem);
+}
+
+@media (width < 786px) {
+  /* Have navbar drawer come from top instead of from the right */
+  nav {
+    border-bottom: 2px solid var(--col-ink-red);
+    border-right: none;
+    left: 0;
+    transform: translateY(-100%);
+    transition: transform 120ms ease-out;
+    background-color: var(--col-ink-black);
+    padding: var(--md-rem);
+    padding-inline-end: 4rem;
+    overflow-x: scroll;
+    margin-top: unset;
+    width: 100%;
+    height: fit-content;
+  }
+
+  /* Change colors for the navbar drawer toggle */
+  header input[type=checkbox] {
+    color: var(--col-paper);
+    border-color: var(--col-paper);
+    background-color: var(--col-ink-black);
+    top: var(--md-rem);
+  }
+
+  header input[type=checkbox]:hover {
+    background-color: color-mix(in oklch, var(--col-ink-black), white 10%);
+  }
+
+  header input[type=checkbox]:checked {
+    color: var(--col-ink-red);
+    border-color: var(--col-ink-red);
+  }
+}
