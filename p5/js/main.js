@@ -1,7 +1,7 @@
 /*
 Project: Project 5-Personal Web Site-Visitor Form Validation-Refactor JS
 Name: Fawn Sannar
-Submitted: <Submit Date>
+Submitted: Fri, 18 Apr 2025 21:04:20 -0600
  
 I declare that the following source code was written by me, or provided
 by the instructor for this project. I understand that copying source

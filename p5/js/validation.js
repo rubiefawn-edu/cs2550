@@ -1,7 +1,7 @@
 /*
 Project: Project 5-Personal Web Site-Visitor Form Validation-Refactor JS
 Name: Fawn Sannar
-Submitted: <Submit Date>
+Submitted: Fri, 18 Apr 2025 21:04:30 -0600
  
 I declare that the following source code was written by me, or provided
 by the instructor for this project. I understand that copying source
@@ -12,11 +12,7 @@ in a zero grade, a permanent record on file and possibly immediate failure of th
  
 Reflection: This isn't a "library". It's deeply coupled to the exact
 visitor form for this exact assignment. It fully assumes there is exactly
-one form ever that needs validation. Since a bad actor can literally
-just disable it or bypass it entirely by doctoring whatever request
-they like, putting this much effort into front-end validation is
-a waste of effort. If I ever saw this code in production I would insist
-the author be executed by firing squad immediately.
+one form ever that needs validation. What on earth?
 
 See also: https://regexlicensing.org/
 
